@@ -5,9 +5,13 @@ import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JList;
+import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class FrmEstadistica extends JFrame {
 
@@ -56,6 +60,30 @@ public class FrmEstadistica extends JFrame {
         JTextField txtEstadistica = new JTextField();
         txtEstadistica.setBounds(210, 200, 100, 25);
         getContentPane().add(txtEstadistica);
+
+        btnAgregar.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                agregardato();
+            }
+        });
+        btnQuitar.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                quitardato();
+            }
+
+        });
+
     }
 
+    private void agregardato() {
+        JOptionPane.showMessageDialog(null, "hizo clic en AGREGAR");
+    }
+
+    private void quitardato() {
+        JOptionPane.showMessageDialog(null, "hizo clic en QUITAR");
+    }
 }
